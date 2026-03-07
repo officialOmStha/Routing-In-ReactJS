@@ -4,31 +4,41 @@ import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import PrivateRout from "./components/privateRout";
 import PublicRout from "./components/PublicRout";
+import Bkground from "./components/Bkground";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      {/* public */}
-      <Route
-        path="/login"
-        element={
-          <PublicRout>
-            <Login />
-          </PublicRout>
-        }
-      />
+    <div className="relative w-full min-h-screen">
+      {/* Background always rendered behind */}
+      <Bkground />
 
-        {/* private */}
-      <Route
-        path="/dashboard"
-        element={
-          <PrivateRout>
-            <Dashboard />
-          </PrivateRout>
-        }
-      />
-    </Routes>
+      {/* Page content above the background */}
+      <div className="relative z-10">
+        <Routes>
+          <Route path="/" element={<Home />} />
+
+          {/* public route */}
+          <Route
+            path="/login"
+            element={
+              <PublicRout>
+                <Login />
+              </PublicRout>
+            }
+          />
+
+          {/* private route */}
+          <Route
+            path="/dashboard"
+            element={
+              <PrivateRout>
+                <Dashboard />
+              </PrivateRout>
+            }
+          />
+        </Routes>
+      </div>
+    </div>
   );
 }
 
