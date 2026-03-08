@@ -1,1 +1,33 @@
 @import "tailwindcss";
+
+/* default boxes (no glow) */
+.glow-box{
+  transition: 0.3s;
+}
+
+/* only some boxes glow */
+.glow-box:nth-child(18n){
+  animation: glow 4s infinite;
+}
+
+.glow-box:nth-child(35n){
+  animation: glow 4s infinite;
+  animation-delay: 1.5s;
+}
+
+.glow-box:nth-child(60n){
+  animation: glow 4s infinite;
+  animation-delay: 3s;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0px rgba(0,255,255,0);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(0,255,255,0.7);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(0,255,255,0);
+  }
+}

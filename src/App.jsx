@@ -5,12 +5,14 @@ import Dashboard from "./components/Dashboard";
 import PrivateRout from "./components/privateRout";
 import PublicRout from "./components/PublicRout";
 import Bkground from "./components/Bkground";
+import Cursor from "./components/Cursor";
 
 function App() {
   return (
     <div className="relative w-full min-h-screen">
       {/* Background always rendered behind */}
       <Bkground />
+      <Cursor />
 
       {/* Page content above the background */}
       <div className="relative z-10">
