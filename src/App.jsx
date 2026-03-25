@@ -7,6 +7,7 @@ import PublicRout from "./components/PublicRout";
 import Bkground from "./components/Bkground";
 import Cursor from "./components/BkgroundCanvas";
 import BkgroundCanvas from "./components/BkgroundCanvas";
+import CardPage from "./components/CardPage";
 
 function App() {
   return (
@@ -37,6 +38,14 @@ function App() {
             element={
               <PrivateRout>
                 <Dashboard />
+              </PrivateRout>
+            }
+          />
+          <Route
+            path="/cards"
+            element={
+              <PrivateRout>
+                <CardPage/>
               </PrivateRout>
             }
           />
